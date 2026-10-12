@@ -1,0 +1,26 @@
+---
+description: Evidence-pack layout for the fictional QG-1 sample — not the Gatlor product
+alwaysApply: true
+---
+
+# Repo conventions
+
+Follow `docs/repo-conventions.md`.
+
+## Layout
+
+- This repository is an evidence pack for a fictional product. It is not the Gatlor product.
+- Markdown is the product. No Python workspace. No `src/`, uv, or firmware image in CI.
+- `README.md` is the write-up outline. `NOTICE.md` is the sample disclaimer. Licence is Apache-2.0.
+- `SECURITY.md` is a fictional disclosure route. `SUPPORT.md` must contain `support_period_end: YYYY-MM-DD`.
+- `product/` persona. `build/` Buildroot config. `release/<version>/` frozen SBOM and hash.
+- `vex/` human decision log (supersede, never delete). `clock/` drafts marked DRAFT. `drill/` hour-by-hour log.
+- `gaps.md` honest misses. `.github/workflows/` runs `gatlor scan --sbom` on the frozen SBOM. `dist/` is gitignored CLI output.
+
+## Forbidden
+
+- Claims that the product meets, passes, or is approved under the CRA, or forbidden claim terms
+- Filing or posting to ENISA; exploit detail
+- Real company names, prices, internal plans
+- Backdating, or deleting a VEX record
+- Secrets

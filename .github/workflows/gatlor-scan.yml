@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Suresh Jaladanki
+# SPDX-License-Identifier: Apache-2.0
+name: Gatlor scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gatlor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: sureshjaladanki/project-gatlor/.github/actions/gatlor@v0.1.1
+        with:
+          sbom: release/1.4.2/sbom.cdx.json
+          out-dir: dist/gatlor
+          repo-root: .
+          artifact-name: gatlor-sample-gateway-scan
